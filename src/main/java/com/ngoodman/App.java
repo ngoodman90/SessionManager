@@ -8,6 +8,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        SessionManager sessionManager = new SessionManager(50);
+        WaitTenWorker waitTenWorker = new WaitTenWorker(sessionManager);
+        WorkerStatusEnum status = waitTenWorker.runJob();
+        System.out.println(status);
     }
 }
